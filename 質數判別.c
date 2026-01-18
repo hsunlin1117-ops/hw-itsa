@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main(void) {
+    long long n;
+    if (scanf("%lld", &n) != 1) return 0;
+    if (n == 1) {
+        printf("NO\n");
+        return 0;
+    }
+    if (n == 2) {
+        printf("YES\n");
+        return 0;
+    }
+    if (n % 2 == 0) {
+        printf("NO\n");
+        return 0;
+    }
+
+    for (long long i = 3; i * i <= n; i += 2) {
+        if (n % i == 0) {
+            printf("NO\n");
+            return 0;
+        }
+    }
+
+    printf("YES\n");
+    return 0;
+}
